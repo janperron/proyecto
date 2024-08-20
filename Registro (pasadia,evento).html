@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eventos.css">
+    <title>Evento</title>
+</head>
+<body>
+    <header>
+        <img src="ipro/logo_chb.jpg" alt="Logo Empresa 1" class="logo">
+        <h3>HOTEL BALNEARIO BRISAS DE CAMBULOS</h3>
+        <ul>
+            <li><a href="inicio.html" target="_blank">Inicio</a></li>
+            <li><a href="reservas_form.html" target="_blank">Reserva</a></li>
+            <li><a href="Registro (pasadia,evento).html" target="_blank">Evento</a></li>
+            <li><a href="pasadiaformulario.html" target="_blank">Pasadía</a></li>
+            <li><a href="Login.html" target="_blank">Inicia Sesión</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="container">
+            <div class="container">
+                <h1>Formulario para eventos</h1>
+                <form action="registro" enctype="multipart/form-data" method="post" name="formulario_html5" autocomplete="off" class="parte1">
+                    <label for="Nombres">Nombres</label>
+                    <input type="text" name="nombre" id="nombre" class="cajas">
+                    <label for="Apellidos">Apellidos</label>
+                    <input type="text" name="Apellidos" id="Apellidos" class="cajas">
+                    <label for="identificacion">CC</label>
+                    <input type="number" name="identificacion" id="CC" class="cajas">
+                    <label for="direccion">Dirección de residencia</label>
+                    <input type="text" name="direccion" id="direccion" class="cajas">
+                    <label for="Vehículo">Tipo de evento</label>
+                    <select name="vehiculo" id="Vehículo" class="cajas">
+                        <option value="0">-....-</option>
+                        <option value="1">Fiesta de 15</option>
+                        <option value="2">Fiesta de Cumpleaños</option>
+                        <option value="3">Runion</option>
+                    </select>
+                    <label for="llegada">Fecha y hora de llegada</label>
+                    <input type="datetime-local" id="llegada" name="fecha-hora-llegada" class="cajas">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="cajas">
+                    <label for="telefono">Teléfono</label>
+                    <input type="number" name="telefono" id="telefono" class="cajas">
+                    <label for="cant_personas">Cantidad de personas</label>
+                    <input type="number" name="cant_personas" id="cant_personas" class="cajas">
+                    <div class="buttons">
+                        <button type="button" onclick="cancelar()">Cancelar</button>
+                        <button type="submit">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Informacion</h2>
+        <p>Horario: fines de semana y festivos. 8:00 am - 5:00 pm</p>
+        <h2>Contacto</h2>
+        <p>Email: contacto@tuempresa.com</p>
+        <p>Teléfono: (+57)3208265400</p>
+        <p>Dirección: Sector las Bombas Villeta-Cundinamarca</p>
+        <p>&copy; 2024 HOTEL BALNEARIO BRISAS DE CAMBULOS. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        // Obtener la fecha y hora actual en el formato adecuado para el campo datetime-local
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0'); // Meses empiezan desde 0
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+    
+        // Formato para min: "YYYY-MM-DDTHH:MM"
+        const currentDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+    
+        // Establecer el valor mínimo en el campo de fecha y hora de llegada
+        document.getElementById('llegada').setAttribute('min', currentDateTime);
+
+        document.querySelectorAll('header ul li a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        if (link.href === window.location.href) {
+            event.preventDefault(); // Previene la recarga si estás en la misma página
+        }
+    });
+});
+    </script>
+</body>
+</html>
+
+

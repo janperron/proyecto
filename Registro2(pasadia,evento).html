@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css (p.dia,eventos).css">
+    <title>evento</title>
+</head>
+<body>
+<header>
+        <div class="header-container">
+            <img src="ipro/logo_chb.jpg" alt="Logo Empresa 1" class="logo">
+            <h1>HOTEL BALNEARIO BRISAS DE CAMBULOS</h1>
+            <img src="ipro/logo_cambulos.jpg" alt="Logo Empresa 2" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="reservas_form.html">Reserva Habitaciones</a></li>
+                <li><a href="Registro (pasadia,evento).html">Reserva para Eventos</a></li>
+                <li><a href="pasadiaformulario.html">Pasadia</a></li>
+                
+            </ul>
+            <form class="search-form">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
+        </nav>
+    </header>
+<!--MAIN-->
+<div class="main">
+    <div class="container">
+      <h2>Formulario de Reserva
+        para Eventos</h2>
+        <form method="get" action="#">
+          <p>
+            <label for="favoriteOnly">Tipo de Evento</label>
+            <select name="favoriteOnly" id="favoriteOnly">
+              <option>Seleccione una opcion</option>
+              <option>Fiesta de 15</option>
+              <option>Fiesta de Cumpleaños</option>
+              <option>Reunión</option>
+            </select>
+          </p>
+        <label for="nombre">Nombres:</label>
+        <input type="text" name="nombres" id="nombre" class="cajas" required></br>
+
+        <label for="Apellidos">Apellidos:</label>
+        <input type="text" name="Apellidos" id="email" class="cajas" required></br>
+
+        <label for="identificacion">CC:</label>
+        <input type="num" name="CC" id="web-site" class="cajas" required></br>
+        
+        <label for="telefono">Celular:</label>
+        <input type="num" name="Celular" id="telefono" class="cajas"></br>
+        
+        <label for="Correo">Correo:</label>
+        <input type="varchar" name="Correo" id="Correo" class="cajas" required></br>
+        
+        <fo>
+          <label for="date">Fecha de Ingreso:</label>
+          <input type="date" class="cajas" id="date" name="date">
+      </fo>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              var today = new Date();
+              var day = String(today.getDate()).padStart(2, '0');
+              var month = String(today.getMonth() + 1).padStart(2, '0');
+              var year = today.getFullYear();
+              var todayString = year + '-' + month + '-' + day;
+              
+              document.getElementById('date').setAttribute('min', todayString);
+          });
+      </script>
+
+        <label for="fecha-hora-llegada">Hora de Ingreso:</label>
+        <input type="time" id="H_Ingreso" name="fecha-hora-llegada" class="cajas" required></br>
+
+        <div class="buttons">
+          <button type="button" onclick="CancelarReserva()">Cancelar</button></br>
+          <button type="submit">Confirmar</button>
+        </div>
+  </form>
+    </divclas>
+  </div>
+</body>
+</html>
