@@ -26,11 +26,15 @@ $Telefono = $_POST['telefono'];
 $Destino = $_POST['destino'];
 
 // Preparar y ejecutar la consulta SQL
-$sql = "INSERT INTO reservas (Nombres, Apellidos, Identificacion, Vehiculo, Placa, Fecha_hora_llegada, Email, Ciudad, Telefono)
-VALUES $Nombres, $Apellidos, $Identificacion, $Vehiculo, $Placa, $Fecha_hora_llegada, $Email, $Ciudad, $Telefono)";
+$sql = "INSERT INTO reservas (Nombres, Apellidos, Identificacion, Vehiculo, Placa, Fecha_hora_llegada, Email, Ciudad, Telefono, Destino)
+VALUES ('$Nombres', '$Apellidos', '$Identificacion', '$Vehiculo', '$Placa', '$Fecha_hora_llegada', '$Email', '$Ciudad', '$Telefono', '$Destino')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Reserva registrada con éxito";
+    // Mostrar una alerta de JavaScript y redirigir al usuario
+    echo "<script>
+            alert('REGISTRO EXITOSO °_°');
+            window.location.href = 'inicio.php';
+          </script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

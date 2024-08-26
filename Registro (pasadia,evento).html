@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="eventos.css">
+    <link rel="stylesheet" href="estilos/eventos.css">
     <title>Evento</title>
 </head>
 <body>
     <header>
-        <img src="ipro/logo_chb.jpg" alt="Logo Empresa 1" class="logo">
+        <img src="estilos/ipro/logo_chb.jpg" alt="Logo Empresa 1" class="logo">
         <h3>HOTEL BALNEARIO BRISAS DE CAMBULOS</h3>
         <ul>
-            <li><a href="inicio.html" target="_blank">Inicio</a></li>
+            <li><a href="inicio.php" target="_blank">Inicio</a></li>
             <li><a href="reservas_form.html" target="_blank">Reserva</a></li>
             <li><a href="Registro (pasadia,evento).html" target="_blank">Evento</a></li>
             <li><a href="pasadiaformulario.html" target="_blank">Pasadía</a></li>
@@ -23,21 +23,21 @@
         <section id="container">
             <div class="container">
                 <h1>Formulario para eventos</h1>
-                <form action="registro" enctype="multipart/form-data" method="post" name="formulario_html5" autocomplete="off" class="parte1">
+                <form action="evento.php" enctype="multipart/form-data" method="post" name="formulario_html5" autocomplete="off" class="parte1">
                     <label for="Nombres">Nombres</label>
                     <input type="text" name="nombre" id="nombre" class="cajas">
                     <label for="Apellidos">Apellidos</label>
                     <input type="text" name="Apellidos" id="Apellidos" class="cajas">
-                    <label for="identificacion">CC</label>
-                    <input type="number" name="identificacion" id="CC" class="cajas">
+                    <label for="identificacion">CC:</label>
+                    <input type="int" name="identificacion" id="identificacion" class="cajas" required>
                     <label for="direccion">Dirección de residencia</label>
                     <input type="text" name="direccion" id="direccion" class="cajas">
-                    <label for="Vehículo">Tipo de evento</label>
-                    <select name="vehiculo" id="Vehículo" class="cajas">
+                    <label for="tipo_evento">Tipo de evento</label>
+                    <select name="tipo_evento" id="tipo_evento" class="cajas">
                         <option value="0">-....-</option>
-                        <option value="1">Fiesta de 15</option>
-                        <option value="2">Fiesta de Cumpleaños</option>
-                        <option value="3">Runion</option>
+                        <option value="Fiesta de 15">Fiesta de 15</option>
+                        <option value="Fiesta de Cumpleaños">Fiesta de Cumpleaños</option>
+                        <option value="Runion">Runion</option>
                     </select>
                     <label for="llegada">Fecha y hora de llegada</label>
                     <input type="datetime-local" id="llegada" name="fecha-hora-llegada" class="cajas">
@@ -49,7 +49,7 @@
                     <input type="number" name="cant_personas" id="cant_personas" class="cajas">
                     <div class="buttons">
                         <button type="button" onclick="cancelar()">Cancelar</button>
-                        <button type="submit">Confirmar</button>
+                        <button type="submit">Enviar</button>
                     </div>
                 </form>
             </div>
